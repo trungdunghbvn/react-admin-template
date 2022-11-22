@@ -1,11 +1,10 @@
-import "./App.css";
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
-import LoginPage from "./pages/login/Login";
-import Register from "./pages/register/Register";
-
-import RequireAuth from "./components/RequireAuth";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
+import LoginPage from './pages/login/Login';
+import Register from './pages/register/Register';
+import RequireAuth from './components/RequireAuth';
+import './App.css';
 
 function App() {
   return (

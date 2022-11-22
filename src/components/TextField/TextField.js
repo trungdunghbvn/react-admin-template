@@ -4,7 +4,7 @@ import "./TextField.scss";
 export function TextField({ label, type, onChange, value }) {
   const inputEl = useRef(value);
 
-  const changeTextField = (e) => {
+  const changeTextField = () => {
     onChange(inputEl.current.value);
   };
 
@@ -19,7 +19,7 @@ export function TextField({ label, type, onChange, value }) {
       <div className="TextField__Connected">
         <input
           ref={inputEl}
-          type={type ? type : "text"}
+          type={type || "text"}
           value={value || ""}
           onChange={changeTextField}
         />

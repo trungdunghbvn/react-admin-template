@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
-import "./Login.scss";
-import { TextField } from "../../components/TextField";
-import { Stack, Button } from "@mui/material";
+import React, { useState } from 'react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { Stack, Button } from '@mui/material';
+import { AuthContext } from '../../contexts/AuthContext';
+import './Login.scss';
+import { TextField } from '../../components/TextField';
 
 function useAuth() {
   return React.useContext(AuthContext);
@@ -13,11 +13,10 @@ export default function Login() {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
 
-  let navigate = useNavigate();
-  let location = useLocation();
-  let auth = useAuth();
-
-  let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  const location = useLocation();
+  const auth = useAuth();
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = () => {
     auth.signin(username, () => {
@@ -32,25 +31,16 @@ export default function Login() {
           <div>
             <h1>Login</h1>
             <p>Sign In to your account</p>
-            <TextField
-              label="Username"
-              value={username}
-              onChange={(value) => setUserName(value)}
-            />
+            <TextField label="Username" value={username} onChange={value => setUserName(value)} />
             <br />
             <TextField
               label="Password"
               type="password"
               value={password}
-              onChange={(value) => setPassword(value)}
+              onChange={value => setPassword(value)}
             />
             <br />
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-              spacing={2}
-            >
+            <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
               <Link to="/register">Forgot password</Link>
               <Button onClick={handleSubmit} type="submit" variant="contained">
                 Login

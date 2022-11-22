@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -7,15 +8,15 @@ function useAuth() {
 }
 
 export default function Register() {
-  let navigate = useNavigate();
-  let location = useLocation();
-  let auth = useAuth();
-  let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  const location = useLocation();
+  const auth = useAuth();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let formData = new FormData(event.currentTarget);
-    let username = formData.get("username");
+    const formData = new FormData(event.currentTarget);
+    const username = formData.get("username");
     auth.signin(username, () => {
       navigate(from, { replace: true });
     });
