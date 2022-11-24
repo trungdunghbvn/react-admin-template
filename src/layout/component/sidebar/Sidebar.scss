@@ -1,0 +1,60 @@
+.Sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex: 0 0 var(--ui-sidebar-width);
+    flex-direction: column;
+    background: #3c4b64;
+    width: var(--ui-sidebar-width);
+    margin-left: calc(var(--ui-sidebar-width) * -1);
+    .Sidebar-Active & {
+        margin-left: 0;
+    }
+    &__Brand {
+        display: flex;
+        flex: 0 0 4rem;
+        align-items: center;
+        justify-content: center;
+        color: hsla(0, 0%, 100%, 0.87);
+        background: rgba(0, 0, 21, 0.2);
+    }
+    &__Nav {
+        position: relative;
+        display: flex;
+        flex: 1 1;
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        list-style: none;
+        .NavTitle {
+            padding: 0.75rem 1rem;
+            margin-top: 1rem;
+            font-size: 80%;
+            font-weight: 700;
+            color: hsla(0, 0%, 100%, 0.6);
+            text-transform: uppercase;
+            transition: height 0.15s, margin 0.15s;
+        }
+        .NavItem {
+            display: flex;
+            align-items: center;
+            padding: 0.8445rem 1rem;
+            color: hsla(0, 0%, 100%, 0.6);
+            text-decoration: none;
+            white-space: nowrap;
+            background: transparent;
+            background: var(--cui-sidebar-nav-link-bg, transparent);
+            a {
+                padding-left: 40px;
+                color: hsla(0, 0%, 100%, 0.87);
+                text-decoration: none;
+            }
+        }
+        .NavGroup {
+            cursor: pointer;
+        }
+    }
+}

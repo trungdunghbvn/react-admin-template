@@ -3,6 +3,9 @@ $primary-color: #1877f2;
 * {
   box-sizing: border-box;
 }
+:root{
+  --ui-sidebar-width: 16rem;
+}
 
 body {
   margin: 0;

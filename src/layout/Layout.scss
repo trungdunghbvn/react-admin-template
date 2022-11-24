@@ -1,0 +1,6 @@
+.Wrapper{
+   margin-left: 0px;
+   .Sidebar-Active & {
+    margin-left: var(--ui-sidebar-width);
+   }
+}

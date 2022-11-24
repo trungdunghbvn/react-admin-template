@@ -8,7 +8,6 @@ function useAuth() {
 
 export default function RequireAuth({ children }) {
   const auth = useAuth();
-  console.log('auth', auth);
   const location = useLocation();
   if (!auth.isLogin) {
     return <Navigate to="/login" state={{ from: location }} replace />;

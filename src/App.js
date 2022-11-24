@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/home/Home';
+import DefaultLayout from './layout/DefaultLayout';
 import LoginPage from './pages/login/Login';
 import Register from './pages/register/Register';
 import RequireAuth from './components/RequireAuth';
@@ -15,7 +15,7 @@ function App() {
         path="*"
         element={
           <RequireAuth>
-            <Home />
+            <DefaultLayout />
           </RequireAuth>
         }
       />
