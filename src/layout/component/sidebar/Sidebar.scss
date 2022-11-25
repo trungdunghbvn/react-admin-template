@@ -41,20 +41,59 @@
         .NavItem {
             display: flex;
             align-items: center;
-            padding: 0.8445rem 1rem;
+            padding-left: 50px;
+            padding-right: 10px;
+            height: 52px;
             color: hsla(0, 0%, 100%, 0.6);
             text-decoration: none;
             white-space: nowrap;
             background: transparent;
             background: var(--cui-sidebar-nav-link-bg, transparent);
             a {
-                padding-left: 40px;
-                color: hsla(0, 0%, 100%, 0.87);
+                color: hsla(0, 0%, 100%, 0.6);
                 text-decoration: none;
+            }
+            &--toggle {
+                &::after {
+                    display: block;
+                    flex: 0 1 6px;
+                    height: 6px;
+                    content: "";
+                    transition: transform 0.15s;
+                    border: solid #e1e2e1;
+                    border-width: 0 1px 1px 0;
+                    display: inline-block;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    margin-left: auto;
+                }
             }
         }
         .NavGroup {
             cursor: pointer;
+            .Navicon {
+                position: relative;
+                svg {
+                    position: absolute;
+                    left: -35px;
+                    top: -9px;
+                    width: 19px;
+                    height: 18px;
+                }
+            }
+            .NavGroup__Item {
+                display: none;
+            }
+            &--active {
+                .NavGroup__Item {
+                    display: block;
+                }
+                .NavItem--toggle {
+                    &::after {
+                        transform: rotate(225deg);
+                    }
+                }
+            }
         }
     }
 }
