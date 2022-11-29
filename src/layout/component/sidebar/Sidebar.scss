@@ -10,6 +10,7 @@
     margin-left: calc(var(--ui-sidebar-width) * -1);
     .Sidebar-Active & {
         margin-left: 0;
+        z-index: 1031;
     }
     &__Brand {
         display: flex;
@@ -94,6 +95,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 767.98px){
+    .Sidebar {
+        .Sidebar-Active & {
+            margin-left: 0;
         }
     }
 }
